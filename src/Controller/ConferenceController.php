@@ -9,18 +9,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class ConferenceController extends AbstractController
 {
     /**
-     * @Route("/hello/{name}", name="homepage")
+     * @Route("/", name="homepage")
      * @param string $name
      * @return Response
      */
-    public function index(string $name)
+    public function index()
     {
-        $greet = '';
-        if ($name) {
-            $greet = htmlspecialchars($name);
-        }
+
         return $this->render('conference/index.html.twig', [
-            'greet' => $greet,
+            'greet' => 'world',
         ]);
     }
 }
